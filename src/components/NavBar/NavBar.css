@@ -1,0 +1,11 @@
+header {
+    background-color: rgb(48, 48, 148);
+    color: white;
+    display: flex;
+}
+
+ul {
+    display: flex;
+    gap: 1rem;
+}
+
