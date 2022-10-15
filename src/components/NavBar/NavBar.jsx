@@ -1,6 +1,5 @@
 import React from "react";
 import "./NavBar.css";
-import ShoppingCart from "../ShopingCart/ShoppingCart";
 import {Link} from "react-router-dom";
 
 function NavBar(props) {
@@ -32,7 +31,6 @@ function NavBar(props) {
                             <Link to="./contact" className="nav-link">Contacto</Link>
                         </li>
                     </ul>
-                    <ShoppingCart/>
                 </nav>
             </header>
         </>

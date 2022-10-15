@@ -1,28 +1,16 @@
 import Button from "../Button/Button";
 import "./card.css";
+import { Link } from "react-router-dom";
+
 
 export default function Card(props) {
-  // estilos
-
-  const cardStyles = {
-    margin: "10px 15px",
-    minHeight: "420px",
-    width: "280px",
-    height: "100%",
-    borderRadius: "4px",
-    boxShadow: "0px 0px 4px rgba(0,0,0,0.50)",
-    backgroundColor: props.expired ? "#555" : "#fff",
-    overflow: "hidden",
-    transition: "all 0.20s ease-in",
-    cursor: "pointer",
-  };
-
+  
   const priceStyle = {
     color: props.offer === true ? "green" : "black",
   };
 
   return (
-    <div style={cardStyles}>
+    <div className="card">
       <div className="card-img">
         <img src={props.img} alt={props.title}></img>
       </div>
@@ -33,8 +21,9 @@ export default function Card(props) {
           {props.offer ? <p>Oferta!</p> : <></>}$ {props.price}
         </h4>
       </div>
-
-      <Button>{`Apredende ${props.title}`}</Button>
+      <Link to={`/productos/${props.id}`}>
+        <Button color={props.color}>{`Compra ${props.title}`}</Button>
+      </Link>
     </div>
   );
 }
